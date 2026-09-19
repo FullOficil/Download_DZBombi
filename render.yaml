@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: dayzombi-download-oficial
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: GAME_NAME
+        value: Day Zombi Survival
+      - key: GAME_VERSION
+        value: "0.4"
+      - key: GAME_PLATFORM
+        value: Android
+      - key: DOWNLOAD_FILE_NAME
+        value: Day-Zombi-Survival.apk
+      - key: GAME_DOWNLOAD_URL
+        sync: false
+      - key: FIREBASE_DATABASE_URL
+        value: https://dayzozmbi-server-default-rtdb.firebaseio.com
+      - key: FIREBASE_SERVICE_ACCOUNT_JSON
+        sync: false
+      - key: DOWNLOAD_COOLDOWN_SECONDS
+        value: "60"
+      - key: REQUIRE_REGISTERED_ACCOUNT
+        value: "false"
