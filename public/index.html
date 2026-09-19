@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b09">
+  <meta name="description" content="Download oficial do Day Zombi Survival.">
+  <title>Day Zombi Survival — Download Oficial</title>
+  <link rel="icon" href="/assets/Icone_Game.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__image"></div>
+    <div class="page-bg__shade"></div>
+    <div class="page-bg__grain"></div>
+  </div>
+
+  <header class="topbar shell">
+    <a class="brand" href="#inicio" aria-label="Day Zombi Survival">
+      <img src="/assets/Icone_Game.png" alt="" class="brand__icon">
+      <span>
+        <strong>DAY ZOMBI SURVIVAL</strong>
+        <small>DOWNLOAD OFICIAL</small>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#imagens">Imagens</a>
+      <a href="#como-baixar">Como baixar</a>
+      <button class="account-button" id="accountButton" type="button">
+        <span class="account-avatar" id="accountAvatar">G</span>
+        <span id="accountText">Entrar na conta</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell" id="inicio">
+      <div class="hero__copy">
+        <div class="status-pill"><span></span> DOWNLOAD OFICIAL • ANDROID</div>
+        <p class="eyebrow">SOBREVIVA. EXPLORE. EVOLUA.</p>
+        <div class="hero__portal-actions" aria-label="Acessos principais">
+          <a class="portal-button portal-button--download" href="#download-area">
+            <span class="portal-button__icon">↓</span>
+            <span class="portal-button__content">
+              <strong>DOWNLOAD</strong>
+              <small>Baixar Day Zombi Survival</small>
+            </span>
+          </a>
+          <a class="portal-button portal-button--store" href="https://loja-dayzombi.onrender.com" target="_blank" rel="noopener noreferrer">
+            <span class="portal-button__icon">▣</span>
+            <span class="portal-button__content">
+              <strong>LOJA</strong>
+              <small>Abrir a loja oficial do jogo</small>
+            </span>
+          </a>
+        </div>
+
+        <p class="hero__lead">Baixe a versão oficial do jogo diretamente pelo site. Para proteger o acesso e registrar os downloads corretamente, é necessário entrar na sua conta antes de baixar.</p>
+
+        <div class="hero__actions" id="download-area">
+          <button class="button button--primary button--download" id="downloadButton" type="button">
+            <span class="button__icon">↓</span>
+            <span id="downloadButtonText">Entrar para baixar</span>
+          </button>
+          <a class="button button--ghost" href="#como-baixar">Como funciona</a>
+        </div>
+
+        <p class="download-message" id="downloadMessage"></p>
+
+        <div class="hero__meta">
+          <div><span>Plataforma</span><strong id="gamePlatform">Android</strong></div>
+          <div><span>Versão</span><strong id="gameVersion">0.4</strong></div>
+          <div><span>Arquivo</span><strong id="gameFile">APK</strong></div>
+        </div>
+      </div>
+
+      <aside class="download-card">
+        <div class="download-card__top">
+          <img src="/assets/Icone_Game.png" alt="Ícone do Day Zombi Survival">
+          <div>
+            <p>JOGO OFICIAL</p>
+            <h2>Day Zombi Survival</h2>
+            <span>Sobrevivência pós-apocalíptica</span>
+          </div>
+        </div>
+
+        <div class="stats-grid stats-grid--single">
+          <div class="stat-card stat-card--main">
+            <span>DOWNLOADS REALIZADOS</span>
+            <strong id="downloadCount">—</strong>
+            <small>downloads registrados</small>
+          </div>
+        </div>
+
+        <div class="security-list">
+          <span>✓ Login protegido pelo Firebase</span>
+          <span>✓ Download liberado somente após autenticação</span>
+          <span>✓ Contador atualizado pelo servidor</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="screens-section" id="imagens">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">IMAGENS DO JOGO</p>
+            <h2>Sobreviva ao que restou</h2>
+          </div>
+          <p>Explore o mapa, encontre recursos e sobreviva em um mundo tomado por ameaças.</p>
+        </div>
+
+        <div class="screens-grid">
+          <button class="screen screen--wide" type="button" data-image="/assets/Image_1.jpg" aria-label="Abrir imagem 1">
+            <img src="/assets/Image_1.jpg" alt="Cena do Day Zombi Survival">
+          </button>
+          <button class="screen" type="button" data-image="/assets/Image_2.jpg" aria-label="Abrir imagem 2">
+            <img src="/assets/Image_2.jpg" alt="Cena do Day Zombi Survival">
+          </button>
+          <button class="screen" type="button" data-image="/assets/Image_3.jpg" aria-label="Abrir imagem 3">
+            <img src="/assets/Image_3.jpg" alt="Cena do Day Zombi Survival">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps-section shell" id="como-baixar">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ACESSO RÁPIDO</p>
+          <h2>Como baixar</h2>
+        </div>
+      </div>
+
+      <div class="steps">
+        <article>
+          <b>01</b>
+          <h3>Entre na sua conta</h3>
+          <p>Use o login Google vinculado ao Firebase do Day Zombi Survival.</p>
+        </article>
+        <article>
+          <b>02</b>
+          <h3>Confirme o download</h3>
+          <p>Depois do login, o botão de download é liberado para sua conta.</p>
+        </article>
+        <article>
+          <b>03</b>
+          <h3>Baixe o arquivo oficial</h3>
+          <p>O servidor registra o download e libera o arquivo configurado pelo administrador.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <div class="brand brand--footer">
+      <img src="/assets/Icone_Game.png" alt="" class="brand__icon">
+      <span>
+        <strong>DAY ZOMBI SURVIVAL</strong>
+        <small>DOWNLOAD OFICIAL</small>
+      </span>
+    </div>
+    <p>Use apenas os canais oficiais para baixar o jogo.</p>
+  </footer>
+
+  <div class="modal" id="authModal" hidden>
+    <div class="modal__backdrop" data-close="auth"></div>
+    <section class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal__close" type="button" data-close="auth" aria-label="Fechar">×</button>
+      <img src="/assets/Icone_Game.png" alt="" class="modal__icon">
+      <p class="eyebrow">CONTA DAY ZOMBI</p>
+      <h2 id="authTitle">Entre antes de baixar</h2>
+      <p>O download só será liberado depois que sua conta for autenticada.</p>
+      <button class="google-button" id="googleLoginButton" type="button">
+        <span>G</span> Continuar com Google
+      </button>
+      <p class="form-error" id="authError"></p>
+    </section>
+  </div>
+
+  <div class="modal" id="accountModal" hidden>
+    <div class="modal__backdrop" data-close="account"></div>
+    <section class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+      <button class="modal__close" type="button" data-close="account" aria-label="Fechar">×</button>
+      <div class="account-head">
+        <div class="account-head__avatar" id="accountModalAvatar">G</div>
+        <div>
+          <p class="eyebrow">MINHA CONTA</p>
+          <h2 id="accountTitle">Conta conectada</h2>
+          <p id="accountEmail">—</p>
+        </div>
+      </div>
+      <div class="account-info">
+        <span>Nick no jogo</span>
+        <strong id="accountNick">Não registrado</strong>
+      </div>
+      <button class="button button--ghost button--full" id="logoutButton" type="button">Sair da conta</button>
+    </section>
+  </div>
+
+  <div class="image-modal" id="imageModal" hidden>
+    <button class="image-modal__close" id="imageModalClose" type="button" aria-label="Fechar imagem">×</button>
+    <img id="imageModalImg" alt="Imagem ampliada do jogo">
+  </div>
+
+  <div class="toast" id="toast" hidden></div>
+</body>
+</html>
